@@ -4,6 +4,9 @@
  *
  * Created on 16 de febrero de 2020, 08:11 AM
  */
+//******************************************************************************
+// Palabra de Configuración
+//******************************************************************************
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
@@ -20,6 +23,9 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+//******************************************************************************
+// Definición de librerías
+//******************************************************************************
 #define _XTAL_FREQ 8000000 //Se define la frecuencia del oscilador para el delay
 #include <xc.h>
 #include <stdint.h>
@@ -30,99 +36,97 @@
 #include "SPI.h"
 #include "ADC.h"
 
-//********************************************************************************************************
+//******************************************************************************
 // Funciones prototipo
-//********************************************************************************************************
+//******************************************************************************
 void init(void);
 void initTMR0(void);
 
-//********************************************************************************************************
+//******************************************************************************
 // Variables
-//********************************************************************************************************
+//******************************************************************************
 uint8_t ADC_CH1_BIN = 0;
 uint8_t ADC_CH2_BIN = 0;
 uint8_t CONT = 0;
 
-//********************************************************************************************************
+//******************************************************************************
 // Interrupciones
-//********************************************************************************************************
+//******************************************************************************
 
 void __interrupt() isr(void){
     //Interrupción del ADC
-    if (ADIF){ //Si la bandera del ADC se encendió
-        ADIF = 0; //Apgaue la bandera
-        if (CONT == 0){ //Si contador está en 0
-            channel(0); //Asigna AN0
-            ADC_CH1_BIN = ADRESH; //Guarde el valor del ADRESH en la variable
+    if (ADIF){                        //Si la bandera del ADC se encendió se realizará
+        ADIF = 0;                     //Apagar la bandera
+        if (CONT == 0){               //Dependiendo si valor de contador está en 0
+            channel(0);               //Asigna AN0
+            ADC_CH1_BIN = ADRESH;    //Guarde el valor del ADRESH en la variable
 
         }
-        if (CONT == 1){ //Si contador está en 1
-            channel(3); //Asigna AN3
-            ADC_CH2_BIN = ADRESH; //Guarde el valor del ADRESH en la variable
+        if (CONT == 1){             //Dependiendo si valor de contador está en 0
+            channel(3);             //Asigna AN3
+            ADC_CH2_BIN = ADRESH;   //Guarde el valor del ADRESH en la variable
 
         }   
     }
     
     //Interrupción del TMR0
-    if (TMR0IF){ //Si la bandera del Timer 0 se prendió
-        TMR0IF = 0; //Apague la bandera
-        TMR0 = 68; //Ponga en TMR0 el valor para un desborde de 3 ms
-        CONT++; //Se incrementa la variable y esta se incrementará cada 3 ms
+    if (TMR0IF){                //Si la bandera del Timer 0 se encendió
+        TMR0IF = 0;             //Apagar la bandera
+        TMR0 = 68;              //TMR0 con desborde de cada 3 ms
+        CONT++;                 //Incrementar variable
         
-        if (CONT > 2){ //Si el valor de la variable llega a 1, reinice a cero el valor de la variable
+        if (CONT > 2){          //Si el valor de la variable llega a 1, reinice conteo
             CONT = 0; 
         }        
     }
 }
-//********************************************************************************************************
+//******************************************************************************
 //Void Principal
-//********************************************************************************************************
+//******************************************************************************
 void main(void) {
-    initOsc(7); // Se usa un reloj interno de 8 MHz
-    init(); //Se inicializan los puertos
-    initADC(); //Se inicializa el ADC
-    initTMR0(); //Se configura el timer 0 para un desborde cada 3 ms
+    initOsc(7);             //Se usa un reloj interno de 8 MHz
+    init();                 //Se inicializan los puertos
+    initADC();              //Se inicializa el ADC
+    initTMR0();             //Se configura el timer 0 para un desborde cada 3 ms
     
-    PORTA = 0;
+    PORTA = 0;              //Inicialización de puertos
     PORTB = 0;
     PORTC = 0;
-    PORTD = 0; //Se inicializan todas los puertos en 0
+    PORTD = 0; 
     
-    while (1){
-        ADCON0bits.GO_nDONE = 1; //Inicia la conversión del ADC   
-        //********************************************************************************************************
+    while (1){              //Loop infinito
+        ADCON0bits.GO_nDONE = 1;                  //Inicia la conversión del ADC   
+        //**********************************************************************
         // Manda el valor de los pots al PIC que funciona como MASTER
-        //********************************************************************************************************         
+        //**********************************************************************         
         spiWrite(ADC_CH1_BIN);
         __delay_ms(5);
         spiWrite(ADC_CH2_BIN);
     }
-    
-    
     return;
 }
-
-//********************************************************************************************************
+//******************************************************************************
 //Función de Inicialización de Puertos
-//********************************************************************************************************
+//******************************************************************************
 
 void init(void){
-    TRISA = 0b00001001; // PORTA configurado como entrada
-    TRISB = 0; // PORTB configurado como salida
-    TRISC = 0; // PORTC configurado como salida
-    TRISD = 0; // PORTD configurado como salida
-    ANSEL = 0b00001001; // Pines connfigurados A0 y A3 como entradas analógicas
-    ANSELH = 0; //Pines configurados como digitales 
-    INTCON = 0b11100000; //GIE, PIE Y T0IE Activadas
+    TRISA = 0b00001001;                 // PORTA configurado como entrada
+    TRISB = 0;                          // PORTB configurado como salida
+    TRISC = 0;                          // PORTC configurado como salida
+    TRISD = 0;                          // PORTD configurado como salida
+    ANSEL = 0b00001001;                 // Pines connfigurados A0 y A3 como entradas analógicas
+    ANSELH = 0;                         //Pines configurados como digitales 
+    INTCON = 0b11100000;                //Habilita GIE, PIE y T0IE 
+    //Inicialización de SPI
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 
-//********************************************************************************************************
+//******************************************************************************
 //Función de Inicialización de TMR0
-//********************************************************************************************************
+//******************************************************************************
 
 void initTMR0(void){
-    OPTION_REG	 = 0x84; //Prescaler de 1:32, Pull-ups en PORTB están desabilitadas
-    TMR0		 = 68; //Valor para obtener desborde cada 3 ms
+    OPTION_REG	 = 0x84;                //Prescaler de 1:32, Pull-ups en PORTB están desabilitadas
+    TMR0		 = 68;                  //Valor para obtener desborde cada 3 ms
     
 }

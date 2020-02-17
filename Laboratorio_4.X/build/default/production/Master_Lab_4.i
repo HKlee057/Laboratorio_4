@@ -7,13 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Master_Lab_4.c" 2
-
-
-
-
-
-
-
+# 11 "Master_Lab_4.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -28,6 +22,9 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
+
+
+
 
 
 
@@ -2515,7 +2512,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 24 "Master_Lab_4.c" 2
+# 30 "Master_Lab_4.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2650,7 +2647,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 25 "Master_Lab_4.c" 2
+# 31 "Master_Lab_4.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2749,7 +2746,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 26 "Master_Lab_4.c" 2
+# 32 "Master_Lab_4.c" 2
 
 
 # 1 "./Oscilador.h" 1
@@ -2763,7 +2760,7 @@ extern int printf(const char *, ...);
 
 
 void initOsc(uint8_t frec);
-# 28 "Master_Lab_4.c" 2
+# 34 "Master_Lab_4.c" 2
 
 # 1 "./UART.h" 1
 # 25 "./UART.h"
@@ -2772,7 +2769,7 @@ uint8_t UART_Read(void);
 void UART_Read_Text(char *Output, unsigned int length);
 void UART_Write(char data);
 void UART_Write_Text(char *text);
-# 29 "Master_Lab_4.c" 2
+# 35 "Master_Lab_4.c" 2
 
 # 1 "./SPI.h" 1
 # 15 "./SPI.h"
@@ -2809,7 +2806,7 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady(void);
 char spiRead(void);
-# 30 "Master_Lab_4.c" 2
+# 36 "Master_Lab_4.c" 2
 
 
 
@@ -2817,8 +2814,12 @@ char spiRead(void);
 
 void init(void);
 
+
+
 uint8_t Cont_COM;
 uint8_t RecPOTS;
+
+
 
 void main(void) {
     initOsc(7);
@@ -2848,7 +2849,6 @@ void main(void) {
 
 
 
-
 void init(void){
     TRISA = 0;
     TRISB = 0;
@@ -2858,5 +2858,6 @@ void init(void){
     ANSEL = 0;
     ANSELH = 0b00000000;
     INTCON = 0b11100000;
+
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

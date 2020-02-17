@@ -4,6 +4,9 @@
  *
  * Created on 16 de febrero de 2020, 08:11 AM
  */
+//******************************************************************************
+// Palabra de Configuración
+//******************************************************************************
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
@@ -20,6 +23,9 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+//******************************************************************************
+// Definición de librerías
+//******************************************************************************
 #define _XTAL_FREQ 8000000 //Se define la frecuencia del oscilador para el delay
 #include <xc.h>
 #include <stdint.h>
@@ -29,52 +35,56 @@
 #include "UART.h"
 #include "SPI.h"
 
-//********************************************************************************************************
+//******************************************************************************
 // Prototipos de Funciones y Declaración de Variables
-//********************************************************************************************************
+//******************************************************************************
 void init(void);
-
+//******************************************************************************
+// Variables
+//******************************************************************************
 uint8_t Cont_COM;
 uint8_t RecPOTS;
-
+//******************************************************************************
+//Void Principal
+//******************************************************************************
 void main(void) {
-    initOsc(7); // Se usa un reloj interno de 8 MHz
-    init(); //Se inicializan los puertos
-    UART_Init(9600); //Se inicializa la comunicación UART
+    initOsc(7);                 // Se usa un reloj interno de 8 MHz
+    init();                     //Se inicializan los puertos
+    UART_Init(9600);            //Se inicializa la comunicación UART
     
-    PORTA = 0;
+    PORTA = 0;                  //Inicialización de puertos
     PORTB = 0;
     PORTC = 0;
     PORTD = 0; 
     
     while (1){
-        Cont_COM = UART_Read();
-        PORTB = Cont_COM;
+        Cont_COM = UART_Read();     //Valor transmitido por la computadora es leído y colocado en variable
+        PORTB = Cont_COM;           //Puerto B de MASTER PIC se iguala a la variable 
         
-        PORTAbits.RA5 = 0;
-        __delay_ms (1);
-        spiDataReady();
-        RecPOTS = spiRead();
+        PORTAbits.RA5 = 0;          //Seleccionar al SLAVE
+        __delay_ms (1);             //Delay de 1 milisegundo
+        spiDataReady();             //Esperar a que el dato esté listo para leer
+        RecPOTS = spiRead();        //Leer dato preveniente de SLAVE PIC
         
-        UART_Write(RecPOTS);
-        __delay_ms(5);
-        UART_Write(RecPOTS);
+        UART_Write(RecPOTS);        //Escribir el el registro de UART para transmitir dato 1
+        __delay_ms(5);              //Delay de 5 milisegundos
+        UART_Write(RecPOTS);        //Escribir el el registro de UART para transmitir dato 1
     }
     return;
 }
-
-//********************************************************************************************************
+//******************************************************************************
 //Función de Inicialización de Puertos
-//********************************************************************************************************
+//******************************************************************************
 void init(void){
-    TRISA = 0; // PORTA configurado como salida
-    TRISB = 0; // PORTB configurado como salida
-    TRISC = 0; // PORTC configurado como salida
-    TRISCbits.TRISC7 = 1; //RC7 configurado como entrada
-    TRISD = 0; // PORTD configurado como salida
-    ANSEL = 0; // Pines connfigurados como entradas digitales
-    ANSELH = 0b00000000; //Pines connfigurados como entradas digitales  
-    INTCON = 0b11100000; //GIE, PIE Y T0IE Activadas
+    TRISA = 0;                      // PORTA configurado como salida
+    TRISB = 0;                      // PORTB configurado como salida
+    TRISC = 0;                      // PORTC configurado como salida
+    TRISCbits.TRISC7 = 1;           //RC7 configurado como entrada
+    TRISD = 0;                      // PORTD configurado como salida
+    ANSEL = 0;                      // Pines connfigurados como entradas digitales
+    ANSELH = 0b00000000;           //Pines connfigurados como entradas digitales  
+    INTCON = 0b11100000;           //Habilita GIE, PIE y T0IE 
+    //Inicialización de SPI
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 

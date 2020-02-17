@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sun Feb 16 22:57:55 2020
+                                                                                               Sun Feb 16 23:16:19 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -633,7 +633,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    619 ;;
    620 ;; *************** function _main *****************
    621 ;; Defined at:
-   622 ;;		line 40 in file "Master_Lab_4.c"
+   622 ;;		line 50 in file "Master_Lab_4.c"
    623 ;; Parameters:    Size  Location     Type
    624 ;;		None
    625 ;; Auto vars:     Size  Location     Type
@@ -674,16 +674,16 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    660                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    661                           
    662                           
-   663                           ;Master_Lab_4.c: 41:     initOsc(7);
+   663                           ;Master_Lab_4.c: 51:     initOsc(7);
    664  069A  3007               	movlw	7
    665  069B  120A  118A  263E  120A  118A  	fcall	_initOsc
    666  06A0                     l964:	
    667                           
-   668                           ;Master_Lab_4.c: 42:     init();
+   668                           ;Master_Lab_4.c: 52:     init();
    669  06A0  120A  118A  2627  120A  118A  	fcall	_init
    670  06A5                     l966:	
    671                           
-   672                           ;Master_Lab_4.c: 43:     UART_Init(9600);
+   672                           ;Master_Lab_4.c: 53:     UART_Init(9600);
    673  06A5  3000               	movlw	0
    674  06A6  1283               	bcf	3,5	;RP0=0, select bank0
    675  06A7  1303               	bcf	3,6	;RP1=0, select bank0
@@ -697,43 +697,43 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    683  06AF  120A  118A  26F6  120A  118A  	fcall	_UART_Init
    684  06B4                     l968:	
    685                           
-   686                           ;Master_Lab_4.c: 45:     PORTA = 0;
+   686                           ;Master_Lab_4.c: 55:     PORTA = 0;
    687  06B4  1283               	bcf	3,5	;RP0=0, select bank0
    688  06B5  1303               	bcf	3,6	;RP1=0, select bank0
    689  06B6  0185               	clrf	5	;volatile
    690  06B7                     l970:	
    691                           
-   692                           ;Master_Lab_4.c: 46:     PORTB = 0;
+   692                           ;Master_Lab_4.c: 56:     PORTB = 0;
    693  06B7  0186               	clrf	6	;volatile
    694  06B8                     l972:	
    695                           
-   696                           ;Master_Lab_4.c: 47:     PORTC = 0;
+   696                           ;Master_Lab_4.c: 57:     PORTC = 0;
    697  06B8  0187               	clrf	7	;volatile
    698  06B9                     l974:	
    699                           
-   700                           ;Master_Lab_4.c: 48:     PORTD = 0;
+   700                           ;Master_Lab_4.c: 58:     PORTD = 0;
    701  06B9  0188               	clrf	8	;volatile
    702  06BA                     l976:	
    703                           
-   704                           ;Master_Lab_4.c: 51:         Cont_COM = UART_Read();
+   704                           ;Master_Lab_4.c: 61:         Cont_COM = UART_Read();
    705  06BA  120A  118A  25F4  120A  118A  	fcall	_UART_Read
    706  06BF  00F9               	movwf	??_main
    707  06C0  0879               	movf	??_main,w
    708  06C1  00FC               	movwf	_Cont_COM
    709  06C2                     l978:	
    710                           
-   711                           ;Master_Lab_4.c: 52:         PORTB = Cont_COM;
+   711                           ;Master_Lab_4.c: 62:         PORTB = Cont_COM;
    712  06C2  087C               	movf	_Cont_COM,w
    713  06C3  1283               	bcf	3,5	;RP0=0, select bank0
    714  06C4  1303               	bcf	3,6	;RP1=0, select bank0
    715  06C5  0086               	movwf	6	;volatile
    716  06C6                     l980:	
    717                           
-   718                           ;Master_Lab_4.c: 54:         PORTAbits.RA5 = 0;
+   718                           ;Master_Lab_4.c: 64:         PORTAbits.RA5 = 0;
    719  06C6  1285               	bcf	5,5	;volatile
    720  06C7                     l982:	
    721                           
-   722                           ;Master_Lab_4.c: 55:         _delay((unsigned long)((1)*(8000000/4000.0)));
+   722                           ;Master_Lab_4.c: 65:         _delay((unsigned long)((1)*(8000000/4000.0)));
    723  06C7  3003               	movlw	3
    724  06C8  00FA               	movwf	??_main+1
    725  06C9  3097               	movlw	151
@@ -746,23 +746,23 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    732  06CF  2ED0               	nop2
    733  06D0                     l984:	
    734                           
-   735                           ;Master_Lab_4.c: 56:         spiDataReady();
+   735                           ;Master_Lab_4.c: 66:         spiDataReady();
    736  06D0  120A  118A  25E9  120A  118A  	fcall	_spiDataReady
    737  06D5                     l986:	
    738                           
-   739                           ;Master_Lab_4.c: 57:         RecPOTS = spiRead();
+   739                           ;Master_Lab_4.c: 67:         RecPOTS = spiRead();
    740  06D5  120A  118A  25FC  120A  118A  	fcall	_spiRead
    741  06DA  00F9               	movwf	??_main
    742  06DB  0879               	movf	??_main,w
    743  06DC  00FB               	movwf	_RecPOTS
    744  06DD                     l988:	
    745                           
-   746                           ;Master_Lab_4.c: 59:         UART_Write(RecPOTS);
+   746                           ;Master_Lab_4.c: 69:         UART_Write(RecPOTS);
    747  06DD  087B               	movf	_RecPOTS,w
    748  06DE  120A  118A  2605  120A  118A  	fcall	_UART_Write
    749  06E3                     l990:	
    750                           
-   751                           ;Master_Lab_4.c: 60:         _delay((unsigned long)((5)*(8000000/4000.0)));
+   751                           ;Master_Lab_4.c: 70:         _delay((unsigned long)((5)*(8000000/4000.0)));
    752  06E3  300D               	movlw	13
    753  06E4  00FA               	movwf	??_main+1
    754  06E5  30FB               	movlw	251
@@ -775,7 +775,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    761  06EB  2EEC               	nop2
    762  06EC                     l992:	
    763                           
-   764                           ;Master_Lab_4.c: 61:         UART_Write(RecPOTS);
+   764                           ;Master_Lab_4.c: 71:         UART_Write(RecPOTS);
    765  06EC  087B               	movf	_RecPOTS,w
    766  06ED  120A  118A  2605  120A  118A  	fcall	_UART_Write
    767  06F2  2EBA               	goto	l976
@@ -1198,7 +1198,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1183  0627                     __ptext5:	
   1184 ;; *************** function _init *****************
   1185 ;; Defined at:
-  1186 ;;		line 69 in file "Master_Lab_4.c"
+  1186 ;;		line 78 in file "Master_Lab_4.c"
   1187 ;; Parameters:    Size  Location     Type
   1188 ;;		None
   1189 ;; Auto vars:     Size  Location     Type
@@ -1234,39 +1234,39 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1219                           ; Regs used in _init: [wreg+status,2+status,0+pclath+cstack]
   1220                           
   1221                           
-  1222                           ;Master_Lab_4.c: 70:     TRISA = 0;
+  1222                           ;Master_Lab_4.c: 79:     TRISA = 0;
   1223  0627  1683               	bsf	3,5	;RP0=1, select bank1
   1224  0628  1303               	bcf	3,6	;RP1=0, select bank1
   1225  0629  0185               	clrf	5	;volatile
   1226                           
-  1227                           ;Master_Lab_4.c: 71:     TRISB = 0;
+  1227                           ;Master_Lab_4.c: 80:     TRISB = 0;
   1228  062A  0186               	clrf	6	;volatile
   1229                           
-  1230                           ;Master_Lab_4.c: 72:     TRISC = 0;
+  1230                           ;Master_Lab_4.c: 81:     TRISC = 0;
   1231  062B  0187               	clrf	7	;volatile
   1232  062C                     l940:	
   1233                           
-  1234                           ;Master_Lab_4.c: 73:     TRISCbits.TRISC7 = 1;
+  1234                           ;Master_Lab_4.c: 82:     TRISCbits.TRISC7 = 1;
   1235  062C  1787               	bsf	7,7	;volatile
   1236                           
-  1237                           ;Master_Lab_4.c: 74:     TRISD = 0;
+  1237                           ;Master_Lab_4.c: 83:     TRISD = 0;
   1238  062D  0188               	clrf	8	;volatile
   1239                           
-  1240                           ;Master_Lab_4.c: 75:     ANSEL = 0;
+  1240                           ;Master_Lab_4.c: 84:     ANSEL = 0;
   1241  062E  1683               	bsf	3,5	;RP0=1, select bank3
   1242  062F  1703               	bsf	3,6	;RP1=1, select bank3
   1243  0630  0188               	clrf	8	;volatile
   1244                           
-  1245                           ;Master_Lab_4.c: 76:     ANSELH = 0b00000000;
+  1245                           ;Master_Lab_4.c: 85:     ANSELH = 0b00000000;
   1246  0631  0189               	clrf	9	;volatile
   1247  0632                     l942:	
   1248                           
-  1249                           ;Master_Lab_4.c: 77:     INTCON = 0b11100000;
+  1249                           ;Master_Lab_4.c: 86:     INTCON = 0b11100000;
   1250  0632  30E0               	movlw	224
   1251  0633  008B               	movwf	11	;volatile
   1252  0634                     l944:	
   1253                           
-  1254                           ;Master_Lab_4.c: 78:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_
+  1254                           ;Master_Lab_4.c: 88:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_
       +                          IDLE_LOW, SPI_IDLE_2_ACTIVE);
   1255  0634  01F0               	clrf	spiInit@sDataSample
   1256  0635  01F1               	clrf	spiInit@sClockIdle
@@ -2035,7 +2035,7 @@ DATA                 0      0      23      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sun Feb 16 22:57:55 2020
+Symbol Table                                                                                   Sun Feb 16 23:16:19 2020
 
              __CFG_CP$OFF 0000               _SSPSTATbits 0094                        l81 0606  
                       l74 075C                        l90 0640                        l59 063D  
