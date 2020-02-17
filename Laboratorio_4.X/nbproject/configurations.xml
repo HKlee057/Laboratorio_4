@@ -7,6 +7,7 @@
       <itemPath>UART.h</itemPath>
       <itemPath>Oscilador.h</itemPath>
       <itemPath>SPI.h</itemPath>
+      <itemPath>ADC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +20,8 @@
       <itemPath>UART.c</itemPath>
       <itemPath>Oscilador.c</itemPath>
       <itemPath>SPI.c</itemPath>
+      <itemPath>Slave_Lab_4.c</itemPath>
+      <itemPath>ADC.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

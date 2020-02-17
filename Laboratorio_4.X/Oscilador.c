@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <pic16f887.h>
+//#include <pic16f887.h>
 #include "Oscilador.h"
 //**************************************************************
 // Función para inicializar Oscilador Interno

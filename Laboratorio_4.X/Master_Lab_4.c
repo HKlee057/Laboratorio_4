@@ -27,19 +27,18 @@
 
 #include "Oscilador.h"
 #include "UART.h"
+#include "SPI.h"
 
 //********************************************************************************************************
 // Prototipos de Funciones y Declaración de Variables
 //********************************************************************************************************
 void init(void);
-//void initTMR0(void);
 
 uint8_t Cont_COM;
 
 void main(void) {
     initOsc(7); // Se usa un reloj interno de 8 MHz
     init(); //Se inicializan los puertos
-    //initTMR0(); //Se configura el timer 0 para un desborde cada 3 ms
     UART_Init(9600); //Se inicializa la comunicación UART
     
     PORTA = 0;
@@ -66,5 +65,6 @@ void init(void){
     ANSEL = 0; // Pines connfigurados como entradas digitales
     ANSELH = 0b00000000; //Pines connfigurados como entradas digitales  
     INTCON = 0b11100000; //GIE, PIE Y T0IE Activadas
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 

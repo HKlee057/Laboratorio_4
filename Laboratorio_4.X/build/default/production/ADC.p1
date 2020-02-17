@@ -1,21 +1,38 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1868 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1868:     struct {
-[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
-[n S70 . SCS LTS HTS OSTS IRCF ]
-"1875
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1875:     struct {
-[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S71 . . IRCF0 IRCF1 IRCF2 ]
-"1867
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1867: typedef union {
-[u S69 `S70 1 `S71 1 ]
-[n S69 . . . ]
-"1882
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
-[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
-"11 ./Oscilador.h
-[p x FOSC = INTRC_NOCLKOUT ]
+"1251 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1257:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1267
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1267:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1271:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1250
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1250: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"2983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2983:     struct {
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2982
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2982: typedef union {
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2991
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -250,171 +267,91 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"8 Oscilador.c
-[; ;Oscilador.c: 8: void initOsc(uint8_t frec){
-[v _initOsc `(v ~T0 @X0 1 ef1`uc ]
+"15 ADC.c
+[; ;ADC.c: 15: void initADC(void){
+[v _initADC `(v ~T0 @X0 1 ef ]
 {
-[e :U _initOsc ]
-[v _frec `uc ~T0 @X0 1 r1 ]
+[e :U _initADC ]
 [f ]
-"9
-[; ;Oscilador.c: 9:     switch(frec){
-[e $U 140  ]
-{
-"10
-[; ;Oscilador.c: 10:         case 0:
-[e :U 141 ]
-"11
-[; ;Oscilador.c: 11:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"12
-[; ;Oscilador.c: 12:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
-"13
-[; ;Oscilador.c: 13:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
-"14
-[; ;Oscilador.c: 14:             break;
-[e $U 139  ]
-"15
-[; ;Oscilador.c: 15:         case 1:
-[e :U 142 ]
-"16
-[; ;Oscilador.c: 16:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "17
-[; ;Oscilador.c: 17:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+[; ;ADC.c: 17:     ADCON0bits.ADCS0 = 1;
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
 "18
-[; ;Oscilador.c: 18:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
-"19
-[; ;Oscilador.c: 19:             break;
-[e $U 139  ]
+[; ;ADC.c: 18:     ADCON0bits.ADCS1 = 0;
+[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
 "20
-[; ;Oscilador.c: 20:         case 2:
-[e :U 143 ]
+[; ;ADC.c: 20:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "21
-[; ;Oscilador.c: 21:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+[; ;ADC.c: 21:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "22
-[; ;Oscilador.c: 22:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"23
-[; ;Oscilador.c: 23:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+[; ;ADC.c: 22:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "24
-[; ;Oscilador.c: 24:             break;
-[e $U 139  ]
+[; ;ADC.c: 24:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "25
-[; ;Oscilador.c: 25:         case 3:
-[e :U 144 ]
-"26
-[; ;Oscilador.c: 26:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"27
-[; ;Oscilador.c: 27:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"28
-[; ;Oscilador.c: 28:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
-"29
-[; ;Oscilador.c: 29:             break;
-[e $U 139  ]
-"30
-[; ;Oscilador.c: 30:         case 4:
-[e :U 145 ]
-"31
-[; ;Oscilador.c: 31:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"32
-[; ;Oscilador.c: 32:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
-"33
-[; ;Oscilador.c: 33:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"34
-[; ;Oscilador.c: 34:             break;
-[e $U 139  ]
-"35
-[; ;Oscilador.c: 35:         case 5:
-[e :U 146 ]
-"36
-[; ;Oscilador.c: 36:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"37
-[; ;Oscilador.c: 37:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
-"38
-[; ;Oscilador.c: 38:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"39
-[; ;Oscilador.c: 39:             break;
-[e $U 139  ]
-"40
-[; ;Oscilador.c: 40:         case 6:
-[e :U 147 ]
-"41
-[; ;Oscilador.c: 41:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"42
-[; ;Oscilador.c: 42:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"43
-[; ;Oscilador.c: 43:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"44
-[; ;Oscilador.c: 44:             break;
-[e $U 139  ]
-"45
-[; ;Oscilador.c: 45:         case 7:
-[e :U 148 ]
-"46
-[; ;Oscilador.c: 46:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"47
-[; ;Oscilador.c: 47:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"48
-[; ;Oscilador.c: 48:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"49
-[; ;Oscilador.c: 49:             break;
-[e $U 139  ]
-"50
-[; ;Oscilador.c: 50:         default:
-[e :U 149 ]
-"51
-[; ;Oscilador.c: 51:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"52
-[; ;Oscilador.c: 52:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"53
-[; ;Oscilador.c: 53:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"54
-[; ;Oscilador.c: 54:             break;
-[e $U 139  ]
-"55
-[; ;Oscilador.c: 55:     }
+[; ;ADC.c: 25: }
+[e :UE 139 ]
 }
-[e $U 139  ]
-[e :U 140 ]
-[e [\ -> _frec `i , $ -> 0 `i 141
- , $ -> 1 `i 142
- , $ -> 2 `i 143
+"27
+[; ;ADC.c: 27: void channel (uint8_t ch){
+[v _channel `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _channel ]
+[v _ch `uc ~T0 @X0 1 r1 ]
+[f ]
+"28
+[; ;ADC.c: 28:     switch(ch){
+[e $U 142  ]
+{
+"29
+[; ;ADC.c: 29:         case 0:
+[e :U 143 ]
+"30
+[; ;ADC.c: 30:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"31
+[; ;ADC.c: 31:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"32
+[; ;ADC.c: 32:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"33
+[; ;ADC.c: 33:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"34
+[; ;ADC.c: 34:             break;
+[e $U 141  ]
+"35
+[; ;ADC.c: 35:         case 3:
+[e :U 144 ]
+"36
+[; ;ADC.c: 36:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"37
+[; ;ADC.c: 37:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"38
+[; ;ADC.c: 38:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"39
+[; ;ADC.c: 39:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"40
+[; ;ADC.c: 40:             break;
+[e $U 141  ]
+"41
+[; ;ADC.c: 41:     }
+}
+[e $U 141  ]
+[e :U 142 ]
+[e [\ -> _ch `i , $ -> 0 `i 143
  , $ -> 3 `i 144
- , $ -> 4 `i 145
- , $ -> 5 `i 146
- , $ -> 6 `i 147
- , $ -> 7 `i 148
- 149 ]
-[e :U 139 ]
-"57
-[; ;Oscilador.c: 57:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"58
-[; ;Oscilador.c: 58: }
-[e :UE 138 ]
+ 141 ]
+[e :U 141 ]
+"42
+[; ;ADC.c: 42: }
+[e :UE 140 ]
 }
