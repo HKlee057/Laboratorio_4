@@ -49,7 +49,6 @@ uint8_t CONT = 0;
 
 void __interrupt() isr(void){
     //Interrupción del ADC
-    
     if (ADIF){ //Si la bandera del ADC se encendió
         ADIF = 0; //Apgaue la bandera
         if (CONT == 0){ //Si contador está en 0
@@ -89,6 +88,16 @@ void main(void) {
     PORTC = 0;
     PORTD = 0; //Se inicializan todas los puertos en 0
     
+    while (1){
+        ADCON0bits.GO_nDONE = 1; //Inicia la conversión del ADC   
+        //********************************************************************************************************
+        // Manda el valor de los pots al PIC que funciona como MASTER
+        //********************************************************************************************************         
+        spiWrite(ADC_CH1_BIN);
+        __delay_ms(5);
+        spiWrite(ADC_CH2_BIN);
+    }
+    
     
     return;
 }
@@ -105,6 +114,7 @@ void init(void){
     ANSEL = 0b00001001; // Pines connfigurados A0 y A3 como entradas analógicas
     ANSELH = 0; //Pines configurados como digitales 
     INTCON = 0b11100000; //GIE, PIE Y T0IE Activadas
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 
 //********************************************************************************************************

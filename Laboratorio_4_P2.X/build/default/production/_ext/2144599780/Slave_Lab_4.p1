@@ -40,7 +40,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "352
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"1416
+"1251
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1257:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1267
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1267:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1271:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1250
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1250: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"45 ../Laboratorio_4.X/SPI.h
+[; ;../Laboratorio_4.X/SPI.h: 45: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "1478
@@ -61,7 +91,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "459
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 459: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
-"1346
+"117 ../Laboratorio_4.X/Slave_Lab_4.c
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 117:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[c E1361 32 33 34 35 36 37 .. ]
+[n E1361 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
+[c E1369 0 128 .. ]
+[n E1369 . SPI_DATA_SAMPLE_MIDDLE SPI_DATA_SAMPLE_END  ]
+[c E1373 16 0 .. ]
+[n E1373 . SPI_CLOCK_IDLE_HIGH SPI_CLOCK_IDLE_LOW  ]
+[c E1377 0 64 .. ]
+[n E1377 . SPI_IDLE_2_ACTIVE SPI_ACTIVE_2_IDLE  ]
+"44 ../Laboratorio_4.X/SPI.h
+[; ;../Laboratorio_4.X/SPI.h: 44: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+[v _spiInit `(v ~T0 @X0 0 ef4`E1361`E1369`E1373`E1377 ]
+"1346 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1346: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 "8 ../Laboratorio_4.X/Slave_Lab_4.c
@@ -349,159 +392,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _isr ]
 [f ]
-"53
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 53:     if (ADIF){
+"52
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 52:     if (ADIF){
 [e $ ! _ADIF 140  ]
 {
-"54
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 54:         ADIF = 0;
+"53
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 53:         ADIF = 0;
 [e = _ADIF -> -> 0 `i `b ]
-"55
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 55:         if (CONT == 0){
+"54
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 54:         if (CONT == 0){
 [e $ ! == -> _CONT `i -> 0 `i 141  ]
 {
-"56
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 56:             channel(0);
+"55
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 55:             channel(0);
 [e ( _channel (1 -> -> 0 `i `uc ]
-"57
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 57:             ADC_CH1_BIN = ADRESH;
+"56
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 56:             ADC_CH1_BIN = ADRESH;
 [e = _ADC_CH1_BIN _ADRESH ]
-"59
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 59:         }
+"58
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 58:         }
 }
 [e :U 141 ]
-"60
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 60:         if (CONT == 1){
+"59
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 59:         if (CONT == 1){
 [e $ ! == -> _CONT `i -> 1 `i 142  ]
 {
-"61
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 61:             channel(3);
+"60
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 60:             channel(3);
 [e ( _channel (1 -> -> 3 `i `uc ]
-"62
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 62:             ADC_CH2_BIN = ADRESH;
+"61
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 61:             ADC_CH2_BIN = ADRESH;
 [e = _ADC_CH2_BIN _ADRESH ]
-"64
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 64:         }
+"63
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 63:         }
 }
 [e :U 142 ]
-"65
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 65:     }
+"64
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 64:     }
 }
 [e :U 140 ]
-"68
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 68:     if (TMR0IF){
+"67
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 67:     if (TMR0IF){
 [e $ ! _TMR0IF 143  ]
 {
-"69
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 69:         TMR0IF = 0;
+"68
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 68:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"70
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 70:         TMR0 = 68;
+"69
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 69:         TMR0 = 68;
 [e = _TMR0 -> -> 68 `i `uc ]
-"71
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 71:         CONT++;
+"70
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 70:         CONT++;
 [e ++ _CONT -> -> 1 `i `uc ]
-"73
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 73:         if (CONT > 2){
+"72
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 72:         if (CONT > 2){
 [e $ ! > -> _CONT `i -> 2 `i 144  ]
 {
-"74
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 74:             CONT = 0;
+"73
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 73:             CONT = 0;
 [e = _CONT -> -> 0 `i `uc ]
-"75
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 75:         }
+"74
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 74:         }
 }
 [e :U 144 ]
-"76
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 76:     }
+"75
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 75:     }
 }
 [e :U 143 ]
-"77
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 77: }
+"76
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 76: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"81
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 81: void main(void) {
+"80
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 80: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"82
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 82:     initOsc(7);
+"81
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 81:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"83
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 83:     init();
+"82
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 82:     init();
 [e ( _init ..  ]
-"84
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 84:     initADC();
+"83
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 83:     initADC();
 [e ( _initADC ..  ]
-"85
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 85:     initTMR0();
+"84
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 84:     initTMR0();
 [e ( _initTMR0 ..  ]
-"87
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 87:     PORTA = 0;
+"86
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 86:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"88
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 88:     PORTB = 0;
+"87
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 87:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"89
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 89:     PORTC = 0;
+"88
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 88:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"90
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 90:     PORTD = 0;
+"89
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 89:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"93
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 93:     return;
+"91
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 91:     while (1){
+[e :U 147 ]
+{
+"92
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 92:         ADCON0bits.GO_nDONE = 1;
+[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
+"96
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 96:         spiWrite(ADC_CH1_BIN);
+[e ( _spiWrite (1 -> _ADC_CH1_BIN `uc ]
+"97
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 97:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"98
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 98:         spiWrite(ADC_CH2_BIN);
+[e ( _spiWrite (1 -> _ADC_CH2_BIN `uc ]
+"99
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 99:     }
+}
+[e :U 146 ]
+[e $U 147  ]
+[e :U 148 ]
+"102
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 102:     return;
 [e $UE 145  ]
-"94
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 94: }
+"103
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 103: }
 [e :UE 145 ]
 }
-"100
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 100: void init(void){
+"109
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 109: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"101
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 101:     TRISA = 0b00001001;
+"110
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 110:     TRISA = 0b00001001;
 [e = _TRISA -> -> 9 `i `uc ]
-"102
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 102:     TRISB = 0;
+"111
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 111:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"103
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 103:     TRISC = 0;
+"112
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 112:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"104
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 104:     TRISD = 0;
+"113
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 113:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"105
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 105:     ANSEL = 0b00001001;
-[e = _ANSEL -> -> 9 `i `uc ]
-"106
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 106:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"107
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 107:     INTCON = 0b11100000;
-[e = _INTCON -> -> 224 `i `uc ]
-"108
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 108: }
-[e :UE 146 ]
-}
 "114
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 114: void initTMR0(void){
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 114:     ANSEL = 0b00001001;
+[e = _ANSEL -> -> 9 `i `uc ]
+"115
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 115:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"116
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 116:     INTCON = 0b11100000;
+[e = _INTCON -> -> 224 `i `uc ]
+"117
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 117:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1361 4 . `E1369 0 . `E1373 1 . `E1377 0 ]
+"118
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 118: }
+[e :UE 149 ]
+}
+"124
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 124: void initTMR0(void){
 [v _initTMR0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _initTMR0 ]
 [f ]
-"115
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 115:     OPTION_REG = 0x84;
+"125
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 125:     OPTION_REG = 0x84;
 [e = _OPTION_REG -> -> 132 `i `uc ]
-"116
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 116:     TMR0 = 68;
+"126
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 126:     TMR0 = 68;
 [e = _TMR0 -> -> 68 `i `uc ]
-"118
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 118: }
-[e :UE 147 ]
+"128
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 128: }
+[e :UE 150 ]
 }
