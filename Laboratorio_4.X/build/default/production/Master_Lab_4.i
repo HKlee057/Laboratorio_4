@@ -2816,8 +2816,8 @@ void init(void);
 
 
 
-uint8_t RecPOT1;
-uint8_t RecPOT2;
+uint8_t RecPOT1 = 0;
+uint8_t RecPOT2 = 0;
 
 
 
@@ -2844,13 +2844,14 @@ void main(void) {
         PORTCbits.RC2 = 0;
         _delay((unsigned long)((1)*(8000000/4000.0)));
         spiWrite(2);
-        RecPOT2 = spiRead();
+        RecPOT2= spiRead();
         _delay((unsigned long)((1)*(8000000/4000.0)));
         PORTCbits.RC2 = 1;
 
-        UART_Write(RecPOT1);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        UART_Write(RecPOT2);
+
+
+
+
     }
     return;
 }
@@ -2862,6 +2863,7 @@ void init(void){
     TRISB = 0;
     TRISC = 0;
     TRISCbits.TRISC7 = 1;
+    TRISCbits.TRISC4 = 1;
     TRISD = 0;
     ANSEL = 0;
     ANSELH = 0b00000000;

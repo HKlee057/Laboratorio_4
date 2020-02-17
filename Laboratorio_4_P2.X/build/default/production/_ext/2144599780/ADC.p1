@@ -274,11 +274,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _initADC ]
 [f ]
 "17
-[; ;../Laboratorio_4.X/ADC.c: 17:     ADCON0bits.ADCS0 = 1;
-[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
+[; ;../Laboratorio_4.X/ADC.c: 17:     ADCON0bits.ADCS0 = 0;
+[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
 "18
-[; ;../Laboratorio_4.X/ADC.c: 18:     ADCON0bits.ADCS1 = 0;
-[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
+[; ;../Laboratorio_4.X/ADC.c: 18:     ADCON0bits.ADCS1 = 1;
+[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
 "20
 [; ;../Laboratorio_4.X/ADC.c: 20:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]

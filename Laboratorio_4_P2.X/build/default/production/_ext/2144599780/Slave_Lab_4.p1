@@ -1,22 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"3587 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3587: extern volatile __bit ADIF __attribute__((address(0x66)));
-[v _ADIF `Vb ~T0 @X0 0 e@102 ]
-"15 ../Laboratorio_4.X/ADC.h
-[; ;../Laboratorio_4.X/ADC.h: 15: void channel(uint8_t ch);
-[v _channel `(v ~T0 @X0 0 ef1`uc ]
-"1238 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
-"4361
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4361: extern volatile __bit TMR0IF __attribute__((address(0x5A)));
-[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
-"59
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
-"4277
+"4277 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4277: extern volatile __bit SSPIF __attribute__((address(0x63)));
 [v _SSPIF `Vb ~T0 @X0 0 e@99 ]
 "352
@@ -34,22 +19,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42 ../Laboratorio_4.X/Slave_Lab_4.c
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 42: void init(void);
 [v _init `(v ~T0 @X0 0 ef ]
-"14 ../Laboratorio_4.X/ADC.h
-[; ;../Laboratorio_4.X/ADC.h: 14: void initADC(void);
-[v _initADC `(v ~T0 @X0 0 ef ]
-"43 ../Laboratorio_4.X/Slave_Lab_4.c
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 43: void initTMR0(void);
-[v _initTMR0 `(v ~T0 @X0 0 ef ]
-"166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"228
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"290
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"1251
+"1251 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
 [s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
 [n S45 . ADON GO_nDONE CHS ADCS ]
@@ -72,6 +42,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"2983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2983:     struct {
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2982
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2982: typedef union {
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2991
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"543 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"1238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -93,17 +101,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "459
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 459: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
-"543
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
-[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"542
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
-[u S18 `S19 1 ]
-[n S18 . . ]
-"553
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
-[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 "1708
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1708:     struct {
 [s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -139,9 +136,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44 ../Laboratorio_4.X/SPI.h
 [; ;../Laboratorio_4.X/SPI.h: 44: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1361`E1369`E1373`E1377 ]
-"1346 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1346: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 "11 ../Laboratorio_4.X/Slave_Lab_4.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "12
@@ -402,188 +396,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "11 ../Laboratorio_4.X/Oscilador.h
 [p x FOSC = INTRC_NOCLKOUT ]
-"48 ../Laboratorio_4.X/Slave_Lab_4.c
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 48: uint8_t ADC_CH1_BIN = 0;
+"46 ../Laboratorio_4.X/Slave_Lab_4.c
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 46: uint8_t ADC_CH1_BIN = 0;
 [v _ADC_CH1_BIN `uc ~T0 @X0 1 e ]
 [i _ADC_CH1_BIN
 -> -> 0 `i `uc
 ]
-"49
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 49: uint8_t ADC_CH2_BIN = 0;
+"47
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 47: uint8_t ADC_CH2_BIN = 0;
 [v _ADC_CH2_BIN `uc ~T0 @X0 1 e ]
 [i _ADC_CH2_BIN
 -> -> 0 `i `uc
 ]
-"50
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 50: uint8_t CONT = 0;
+"48
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 48: uint8_t CONT = 0;
 [v _CONT `uc ~T0 @X0 1 e ]
 [i _CONT
 -> -> 0 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"56
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 56: void __attribute__((picinterrupt(("")))) isr(void){
+"54
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 54: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
+"56
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 56:        if(SSPIF == 1){
+[e $ ! == -> _SSPIF `i -> 1 `i 140  ]
+{
+"57
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 57:            PORTD = spiRead();
+[e = _PORTD -> ( _spiRead ..  `uc ]
 "58
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 58:     if (ADIF){
-[e $ ! _ADIF 140  ]
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 58:            if (PORTD == 1){
+[e $ ! == -> _PORTD `i -> 1 `i 141  ]
 {
 "59
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 59:         ADIF = 0;
-[e = _ADIF -> -> 0 `i `b ]
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 59:                spiWrite(ADC_CH1_BIN);
+[e ( _spiWrite (1 -> _ADC_CH1_BIN `uc ]
 "60
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 60:         if (CONT == 0){
-[e $ ! == -> _CONT `i -> 0 `i 141  ]
-{
-"61
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 61:             channel(0);
-[e ( _channel (1 -> -> 0 `i `uc ]
-"62
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 62:             ADC_CH1_BIN = ADRESH;
-[e = _ADC_CH1_BIN _ADRESH ]
-"64
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 64:         }
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 60:            }
 }
 [e :U 141 ]
-"65
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 65:         if (CONT == 1){
-[e $ ! == -> _CONT `i -> 1 `i 142  ]
+"61
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 61:            if (PORTD == 2){
+[e $ ! == -> _PORTD `i -> 2 `i 142  ]
 {
-"66
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 66:             channel(3);
-[e ( _channel (1 -> -> 3 `i `uc ]
-"67
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 67:             ADC_CH2_BIN = ADRESH;
-[e = _ADC_CH2_BIN _ADRESH ]
-"69
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 69:         }
+"62
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 62:                spiWrite(ADC_CH2_BIN);
+[e ( _spiWrite (1 -> _ADC_CH2_BIN `uc ]
+"63
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 63:            }
 }
 [e :U 142 ]
-"70
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 70:     }
+"64
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 64:         SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"65
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 65:     }
 }
 [e :U 140 ]
-"73
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 73:     if (TMR0IF){
-[e $ ! _TMR0IF 143  ]
-{
-"74
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 74:         TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
-"75
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 75:         TMR0 = 68;
-[e = _TMR0 -> -> 68 `i `uc ]
-"76
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 76:         CONT++;
-[e ++ _CONT -> -> 1 `i `uc ]
-"78
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 78:         if (CONT > 2){
-[e $ ! > -> _CONT `i -> 2 `i 144  ]
-{
-"79
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 79:             CONT = 0;
-[e = _CONT -> -> 0 `i `uc ]
-"80
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 80:         }
-}
-[e :U 144 ]
-"81
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 81:     }
-}
-[e :U 143 ]
-"83
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 83:        if(SSPIF == 1){
-[e $ ! == -> _SSPIF `i -> 1 `i 145  ]
-{
-"84
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 84:            PORTD = spiRead();
-[e = _PORTD -> ( _spiRead ..  `uc ]
-"85
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 85:            if (PORTD == 1){
-[e $ ! == -> _PORTD `i -> 1 `i 146  ]
-{
-"86
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 86:                spiWrite(ADC_CH1_BIN);
-[e ( _spiWrite (1 -> _ADC_CH1_BIN `uc ]
-"87
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 87:            }
-}
-[e :U 146 ]
-"88
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 88:            if (PORTD == 2){
-[e $ ! == -> _PORTD `i -> 2 `i 147  ]
-{
-"89
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 89:                spiWrite(ADC_CH2_BIN);
-[e ( _spiWrite (1 -> _ADC_CH2_BIN `uc ]
-"90
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 90:            }
-}
-[e :U 147 ]
-"91
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 91:         SSPIF = 0;
-[e = _SSPIF -> -> 0 `i `b ]
-"92
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 92:     }
-}
-[e :U 145 ]
-"93
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 93: }
+"66
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 66: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"97
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 97: void main(void) {
+"70
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 70: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"98
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 98:     initOsc(7);
+"71
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 71:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"99
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 99:     init();
+"72
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 72:     init();
 [e ( _init ..  ]
-"100
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 100:     initADC();
-[e ( _initADC ..  ]
-"101
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 101:     initTMR0();
-[e ( _initTMR0 ..  ]
-"103
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 103:     PORTA = 0;
+"73
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 73:     ADCON0bits.ADCS0 = 0;
+[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
+"74
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 74:     ADCON0bits.ADCS1 = 1;
+[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
+"75
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 75:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+"76
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 76:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+"77
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 77:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+"79
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 79:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"81
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 81:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"104
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 104:     PORTB = 0;
+"82
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 82:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"105
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 105:     PORTC = 0;
+"83
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 83:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"106
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 106:     PORTD = 0;
+"84
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 84:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"108
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 108:     while (1){
-[e :U 150 ]
+"86
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 86:     while (1){
+[e :U 145 ]
 {
+"87
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 87:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"88
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 88:         ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"89
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 89:         ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"90
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 90:         ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"91
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 91:         ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"92
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 92:         ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"94
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 94:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"95
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 95:         ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"96
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 96:         ADC_CH1_BIN = ADRESH;
+[e = _ADC_CH1_BIN _ADRESH ]
+"98
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 98:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"100
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 100:         ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"101
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 101:         ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"102
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 102:         ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"103
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 103:         ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"105
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 105:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"106
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 106:         ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"107
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 107:         ADC_CH2_BIN = ADRESH;
+[e = _ADC_CH2_BIN _ADRESH ]
 "109
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 109:         ADCON0bits.GO_nDONE = 1;
-[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 109:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "110
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 110:     }
 }
-[e :U 149 ]
-[e $U 150  ]
-[e :U 151 ]
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
 "111
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 111:     return;
-[e $UE 148  ]
+[e $UE 143  ]
 "112
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 112: }
-[e :UE 148 ]
+[e :UE 143 ]
 }
 "117
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 117: void init(void){
@@ -598,8 +588,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 119:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
 "120
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 120:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;../Laboratorio_4.X/Slave_Lab_4.c: 120:     TRISC = 0b00001000;
+[e = _TRISC -> -> 8 `i `uc ]
 "121
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 121:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
@@ -626,21 +616,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _spiInit (4 , , , . `E1361 4 . `E1369 0 . `E1373 1 . `E1377 0 ]
 "130
 [; ;../Laboratorio_4.X/Slave_Lab_4.c: 130: }
-[e :UE 152 ]
-}
-"134
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 134: void initTMR0(void){
-[v _initTMR0 `(v ~T0 @X0 1 ef ]
-{
-[e :U _initTMR0 ]
-[f ]
-"135
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 135:     OPTION_REG = 0x84;
-[e = _OPTION_REG -> -> 132 `i `uc ]
-"136
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 136:     TMR0 = 68;
-[e = _TMR0 -> -> 68 `i `uc ]
-"138
-[; ;../Laboratorio_4.X/Slave_Lab_4.c: 138: }
-[e :UE 153 ]
+[e :UE 147 ]
 }

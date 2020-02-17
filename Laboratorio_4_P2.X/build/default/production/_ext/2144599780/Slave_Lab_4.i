@@ -2808,19 +2808,12 @@ unsigned spiDataReady(void);
 char spiRead(void);
 # 36 "../Laboratorio_4.X/Slave_Lab_4.c" 2
 
-# 1 "../Laboratorio_4.X/ADC.h" 1
-# 14 "../Laboratorio_4.X/ADC.h"
-void initADC(void);
-void channel(uint8_t ch);
-# 37 "../Laboratorio_4.X/Slave_Lab_4.c" 2
 
 
 
 
 
 void init(void);
-void initTMR0(void);
-
 
 
 
@@ -2833,31 +2826,6 @@ uint8_t CONT = 0;
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-
-    if (ADIF){
-        ADIF = 0;
-        if (CONT == 0){
-            channel(0);
-            ADC_CH1_BIN = ADRESH;
-
-        }
-        if (CONT == 1){
-            channel(3);
-            ADC_CH2_BIN = ADRESH;
-
-        }
-    }
-
-
-    if (TMR0IF){
-        TMR0IF = 0;
-        TMR0 = 68;
-        CONT++;
-
-        if (CONT > 2){
-            CONT = 0;
-        }
-    }
 
        if(SSPIF == 1){
            PORTD = spiRead();
@@ -2876,8 +2844,13 @@ void __attribute__((picinterrupt(("")))) isr(void){
 void main(void) {
     initOsc(7);
     init();
-    initADC();
-    initTMR0();
+    ADCON0bits.ADCS0 = 0;
+    ADCON0bits.ADCS1 = 1;
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+
+    ADCON0bits.ADON = 1;
 
     PORTA = 0;
     PORTB = 0;
@@ -2885,7 +2858,29 @@ void main(void) {
     PORTD = 0;
 
     while (1){
-        ADCON0bits.GO_nDONE = 1;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        ADCON0bits.CHS0 = 0;
+        ADCON0bits.CHS1 = 0;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+        ADCON0bits.ADON = 1;
+
+        PIR1bits.ADIF = 0;
+        ADCON0bits.GO = 1;
+        ADC_CH1_BIN = ADRESH;
+
+        _delay((unsigned long)((5)*(8000000/4000.0)));
+
+        ADCON0bits.CHS0 = 1;
+        ADCON0bits.CHS1 = 1;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+
+        PIR1bits.ADIF = 0;
+        ADCON0bits.GO = 1;
+        ADC_CH2_BIN = ADRESH;
+
+        _delay((unsigned long)((5)*(8000000/4000.0)));
     }
     return;
 }
@@ -2896,7 +2891,7 @@ void main(void) {
 void init(void){
     TRISA = 0b00001001;
     TRISB = 0;
-    TRISC = 0;
+    TRISC = 0b00001000;
     TRISD = 0;
     ANSEL = 0b00001001;
     ANSELH = 0;
@@ -2906,12 +2901,4 @@ void init(void){
     TRISAbits.TRISA5 = 1;
 
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-}
-
-
-
-void initTMR0(void){
-    OPTION_REG = 0x84;
-    TMR0 = 68;
-
 }

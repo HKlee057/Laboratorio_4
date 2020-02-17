@@ -42,8 +42,8 @@ void init(void);
 //******************************************************************************
 // Variables
 //******************************************************************************
-uint8_t RecPOT1;
-uint8_t RecPOT2;
+uint8_t RecPOT1 = 0;
+uint8_t RecPOT2 = 0;
 //******************************************************************************
 //Void Principal
 //******************************************************************************
@@ -70,13 +70,14 @@ void main(void) {
         PORTCbits.RC2 = 0;          //Seleccionar al SLAVE
         __delay_ms (1);             //Delay de 1 milisegundo
         spiWrite(2);
-        RecPOT2 = spiRead();        //Leer dato preveniente de SLAVE PIC
+        RecPOT2= spiRead();        //Leer dato preveniente de SLAVE PIC
         __delay_ms(1);
         PORTCbits.RC2 = 1;          //Slave Deselect
         
         UART_Write(RecPOT1);        //Escribir el el registro de UART para transmitir dato 1
         __delay_ms(5);              //Delay de 5 milisegundos
         UART_Write(RecPOT2);        //Escribir el el registro de UART para transmitir dato 1
+         
     }
     return;
 }
@@ -88,6 +89,7 @@ void init(void){
     TRISB = 0;                      // PORTB configurado como salida
     TRISC = 0;                      // PORTC configurado como salida
     TRISCbits.TRISC7 = 1;           //RC7 configurado como entrada
+    TRISCbits.TRISC4 = 1;
     TRISD = 0;                      // PORTD configurado como salida
     ANSEL = 0;                      // Pines connfigurados como entradas digitales
     ANSELH = 0b00000000;           //Pines connfigurados como entradas digitales  

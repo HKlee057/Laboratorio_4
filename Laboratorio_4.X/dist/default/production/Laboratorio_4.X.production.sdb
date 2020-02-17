@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"96 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Master_Lab_4.c
+"98 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Master_Lab_4.c
 [e E1361 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -57,7 +57,7 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "50 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Master_Lab_4.c
 [v _main main `(v  1 e 1 0 ]
-"86
+"87
 [v _init init `(v  1 e 1 0 ]
 "8 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -73,8 +73,6 @@ SPI_ACTIVE_2_IDLE 64
 [v _UART_Init UART_Init `(uc  1 e 1 0 ]
 "34
 [v _UART_Read UART_Read `(uc  1 e 1 0 ]
-"42
-[v _UART_Write UART_Write `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
@@ -97,7 +95,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "459
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S243 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S238 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -106,13 +104,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S251 . 1 `S243 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES251  1 e 1 @12 ]
+[u S246 . 1 `S238 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES246  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S199 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S194 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -122,18 +120,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S208 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S203 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S212 . 1 `uc 1 . 1 0 :6:0 
+[s S207 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S215 . 1 `uc 1 . 1 0 :6:0 
+[s S210 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S218 . 1 `S199 1 . 1 0 `S208 1 . 1 0 `S212 1 . 1 0 `S215 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES218  1 e 1 @24 ]
+[u S213 . 1 `S194 1 . 1 0 `S203 1 . 1 0 `S207 1 . 1 0 `S210 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES213  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
@@ -144,7 +142,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S88 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S83 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -154,27 +152,27 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S97 . 1 `S88 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES97  1 e 1 @135 ]
+[u S92 . 1 `S83 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES92  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S292 . 1 `uc 1 SCS 1 0 :1:0 
+[s S287 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S298 . 1 `uc 1 . 1 0 :4:0 
+[s S293 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S303 . 1 `S292 1 . 1 0 `S298 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES303  1 e 1 @143 ]
+[u S298 . 1 `S287 1 . 1 0 `S293 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES298  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S349 . 1 `uc 1 BF 1 0 :1:0 
+[s S344 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -184,40 +182,40 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S358 . 1 `uc 1 . 1 0 :2:0 
+[s S353 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S363 . 1 `uc 1 . 1 0 :2:0 
+[s S358 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S369 . 1 `uc 1 . 1 0 :2:0 
+[s S364 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S374 . 1 `uc 1 . 1 0 :2:0 
+[s S369 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S379 . 1 `uc 1 . 1 0 :2:0 
+[s S374 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S384 . 1 `uc 1 . 1 0 :2:0 
+[s S379 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S389 . 1 `S349 1 . 1 0 `S358 1 . 1 0 `S363 1 . 1 0 `S369 1 . 1 0 `S374 1 . 1 0 `S379 1 . 1 0 `S384 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES389  1 e 1 @148 ]
-[s S162 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S384 . 1 `S344 1 . 1 0 `S353 1 . 1 0 `S358 1 . 1 0 `S364 1 . 1 0 `S369 1 . 1 0 `S374 1 . 1 0 `S379 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES384  1 e 1 @148 ]
+[s S157 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -227,15 +225,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S171 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S166 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S175 . 1 `uc 1 . 1 0 :6:0 
+[s S170 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S178 . 1 `S162 1 . 1 0 `S171 1 . 1 0 `S175 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES178  1 e 1 @152 ]
+[u S173 . 1 `S157 1 . 1 0 `S166 1 . 1 0 `S170 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES173  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -253,7 +251,7 @@ SPI_ACTIVE_2_IDLE 64
 "50
 [v _main main `(v  1 e 1 0 ]
 {
-"82
+"83
 } 0
 "32 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -282,10 +280,10 @@ SPI_ACTIVE_2_IDLE 64
 [v initOsc@frec frec `uc  1 a 1 2 ]
 "58
 } 0
-"86 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Master_Lab_4.c
+"87 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\Master_Lab_4.c
 [v _init init `(v  1 e 1 0 ]
 {
-"97
+"99
 } 0
 "10 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -299,15 +297,7 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "25
 } 0
-"42 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\UART.c
-[v _UART_Write UART_Write `(v  1 e 1 0 ]
-{
-[v UART_Write@data data `uc  1 a 1 wreg ]
-[v UART_Write@data data `uc  1 a 1 wreg ]
-[v UART_Write@data data `uc  1 a 1 0 ]
-"45
-} 0
-"34
+"34 C:\Users\hecto\Documents\GitHub\Laboratorio_4\Laboratorio_4.X\UART.c
 [v _UART_Read UART_Read `(uc  1 e 1 0 ]
 {
 "38

@@ -34,14 +34,12 @@
 #include "Oscilador.h"
 #include "UART.h"
 #include "SPI.h"
-#include "ADC.h"
+//#include "ADC.h"
 
 //******************************************************************************
 // Funciones prototipo
 //******************************************************************************
 void init(void);
-void initTMR0(void);
-
 //******************************************************************************
 // Variables
 //******************************************************************************
@@ -54,31 +52,6 @@ uint8_t CONT = 0;
 //******************************************************************************
 
 void __interrupt() isr(void){
-    //Interrupción del ADC
-    if (ADIF){                        //Si la bandera del ADC se encendió se realizará
-        ADIF = 0;                     //Apagar la bandera
-        if (CONT == 0){               //Dependiendo si valor de contador está en 0
-            channel(0);               //Asigna AN0
-            ADC_CH1_BIN = ADRESH;    //Guarde el valor del ADRESH en la variable
-
-        }
-        if (CONT == 1){             //Dependiendo si valor de contador está en 0
-            channel(3);             //Asigna AN3
-            ADC_CH2_BIN = ADRESH;   //Guarde el valor del ADRESH en la variable
-
-        }   
-    }
-    
-    //Interrupción del TMR0
-    if (TMR0IF){                //Si la bandera del Timer 0 se encendió
-        TMR0IF = 0;             //Apagar la bandera
-        TMR0 = 68;              //TMR0 con desborde de cada 3 ms
-        CONT++;                 //Incrementar variable
-        
-        if (CONT > 2){          //Si el valor de la variable llega a 1, reinice conteo
-            CONT = 0; 
-        }        
-    }
     //Interrupción del SSP
        if(SSPIF == 1){
            PORTD = spiRead();
@@ -97,16 +70,43 @@ void __interrupt() isr(void){
 void main(void) {
     initOsc(7);             //Se usa un reloj interno de 8 MHz
     init();                 //Se inicializan los puertos
-    initADC();              //Se inicializa el ADC
-    initTMR0();             //Se configura el timer 0 para un desborde cada 3 ms
+    ADCON0bits.ADCS0 = 0;       //Reloj de conversión a FOSC/32 
+    ADCON0bits.ADCS1 = 1;
+    ADCON1bits.ADFM = 0;        //Valor justificado a la izquierda
+    ADCON1bits.VCFG0 = 0;       //Voltaje de referencia positivo en 5V
+    ADCON1bits.VCFG1 = 0;       //Voltaje de referencia negativo en Tierra
+
+    ADCON0bits.ADON = 1;       //El ADC está habilitado
     
     PORTA = 0;              //Inicialización de puertos
     PORTB = 0;
     PORTC = 0;
     PORTD = 0; 
     
-    while (1){              //Loop infinito
-        ADCON0bits.GO_nDONE = 1;                  //Inicia la conversión del ADC   
+    while (1){                      //Loop infinito       
+        __delay_ms(1);
+        ADCON0bits.CHS0 = 0;       //Selección de canal AN0
+        ADCON0bits.CHS1 = 0;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+        ADCON0bits.ADON = 1;       //El ADC está habilitado
+        
+        PIR1bits.ADIF = 0;         //Verifica la finalización de conversión
+        ADCON0bits.GO = 1;         //Inicia conversión
+        ADC_CH1_BIN = ADRESH;      //Realiza conversión para leer normal
+        
+        __delay_ms(5);
+        
+        ADCON0bits.CHS0 = 1;      //Selección de canal AN3
+        ADCON0bits.CHS1 = 1;
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS3 = 0;
+        
+        PIR1bits.ADIF = 0;
+        ADCON0bits.GO = 1;        //Mismas instrucciones previas
+        ADC_CH2_BIN = ADRESH;
+        
+        __delay_ms(5);
     }
     return;
 }
@@ -117,7 +117,7 @@ void main(void) {
 void init(void){
     TRISA = 0b00001001;                 // PORTA configurado como entrada
     TRISB = 0;                          // PORTB configurado como salida
-    TRISC = 0;                          // PORTC configurado como salida
+    TRISC = 0b00001000;                          // PORTC configurado como salida
     TRISD = 0;                          // PORTD configurado como salida
     ANSEL = 0b00001001;                 // Pines connfigurados A0 y A3 como entradas analógicas
     ANSELH = 0;                         //Pines configurados como digitales 
@@ -127,12 +127,4 @@ void init(void){
     TRISAbits.TRISA5 = 1;               // Slave Select
     //Inicialización de SPI
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-}
-//******************************************************************************
-//Función de Inicialización de TMR0
-//******************************************************************************
-void initTMR0(void){
-    OPTION_REG	 = 0x84;                //Prescaler de 1:32, Pull-ups en PORTB están desabilitadas
-    TMR0		 = 68;                  //Valor para obtener desborde cada 3 ms
-    
 }

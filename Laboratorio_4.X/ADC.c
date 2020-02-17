@@ -14,8 +14,8 @@
 
 void initADC(void){
     
-    ADCON0bits.ADCS0 = 1;       //Reloj de conversión a FOSC/8 
-    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADCS0 = 0;       //Reloj de conversión a FOSC/8 
+    ADCON0bits.ADCS1 = 1;
     
     ADCON1bits.ADFM = 0;        //Valor justificado a la izquierda
     ADCON1bits.VCFG0 = 0;       //Voltaje de referencia positivo en 5V

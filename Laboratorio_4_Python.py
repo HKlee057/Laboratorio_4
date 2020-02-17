@@ -15,7 +15,7 @@ real_POT1 = 0
 real_POT2 = 0
 
 #Configuración del Puerto Serial
-puerto = 'COM7'
+puerto = 'COM8'
 ser = serial.Serial(port = puerto, baudrate = 9600,
                     parity = serial.PARITY_NONE,
                     stopbits = serial.STOPBITS_ONE,
