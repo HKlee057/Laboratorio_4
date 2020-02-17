@@ -2807,8 +2807,8 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady();
-char spiRead();
+unsigned spiDataReady(void);
+char spiRead(void);
 # 30 "Master_Lab_4.c" 2
 
 
@@ -2818,6 +2818,7 @@ char spiRead();
 void init(void);
 
 uint8_t Cont_COM;
+uint8_t RecPOTS;
 
 void main(void) {
     initOsc(7);
@@ -2832,6 +2833,15 @@ void main(void) {
     while (1){
         Cont_COM = UART_Read();
         PORTB = Cont_COM;
+
+        PORTAbits.RA5 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        spiDataReady();
+        RecPOTS = spiRead();
+
+        UART_Write(RecPOTS);
+        _delay((unsigned long)((5)*(8000000/4000.0)));
+        UART_Write(RecPOTS);
     }
     return;
 }

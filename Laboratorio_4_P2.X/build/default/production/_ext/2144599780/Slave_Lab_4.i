@@ -2807,8 +2807,8 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady();
-char spiRead();
+unsigned spiDataReady(void);
+char spiRead(void);
 # 30 "../Laboratorio_4.X/Slave_Lab_4.c" 2
 
 # 1 "../Laboratorio_4.X/ADC.h" 1

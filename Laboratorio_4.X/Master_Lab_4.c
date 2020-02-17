@@ -35,6 +35,7 @@
 void init(void);
 
 uint8_t Cont_COM;
+uint8_t RecPOTS;
 
 void main(void) {
     initOsc(7); // Se usa un reloj interno de 8 MHz
@@ -49,6 +50,15 @@ void main(void) {
     while (1){
         Cont_COM = UART_Read();
         PORTB = Cont_COM;
+        
+        PORTAbits.RA5 = 0;
+        __delay_ms (1);
+        spiDataReady();
+        RecPOTS = spiRead();
+        
+        UART_Write(RecPOTS);
+        __delay_ms(5);
+        UART_Write(RecPOTS);
     }
     return;
 }

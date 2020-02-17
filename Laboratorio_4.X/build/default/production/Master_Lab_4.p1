@@ -23,6 +23,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26 ./UART.h
 [; ;./UART.h: 26: uint8_t UART_Read(void);
 [v _UART_Read `(uc ~T0 @X0 0 ef ]
+"172 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"46 ./SPI.h
+[; ;./SPI.h: 46: unsigned spiDataReady(void);
+[v _spiDataReady `(ui ~T0 @X0 0 ef ]
+"47
+[; ;./SPI.h: 47: char spiRead(void);
+[v _spiRead `(uc ~T0 @X0 0 ef ]
+"28 ./UART.h
+[; ;./UART.h: 28: void UART_Write(char data);
+[v _UART_Write `(v ~T0 @X0 0 ef1`uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -55,8 +79,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "459
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 459: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
-"68 Master_Lab_4.c
-[; ;Master_Lab_4.c: 68:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"78 Master_Lab_4.c
+[; ;Master_Lab_4.c: 78:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1361 32 33 34 35 36 37 .. ]
 [n E1361 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1369 0 128 .. ]
@@ -331,91 +355,115 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37 Master_Lab_4.c
 [; ;Master_Lab_4.c: 37: uint8_t Cont_COM;
 [v _Cont_COM `uc ~T0 @X0 1 e ]
+"38
+[; ;Master_Lab_4.c: 38: uint8_t RecPOTS;
+[v _RecPOTS `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"39
-[; ;Master_Lab_4.c: 39: void main(void) {
+"40
+[; ;Master_Lab_4.c: 40: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"40
-[; ;Master_Lab_4.c: 40:     initOsc(7);
-[e ( _initOsc (1 -> -> 7 `i `uc ]
 "41
-[; ;Master_Lab_4.c: 41:     init();
-[e ( _init ..  ]
+[; ;Master_Lab_4.c: 41:     initOsc(7);
+[e ( _initOsc (1 -> -> 7 `i `uc ]
 "42
-[; ;Master_Lab_4.c: 42:     UART_Init(9600);
+[; ;Master_Lab_4.c: 42:     init();
+[e ( _init ..  ]
+"43
+[; ;Master_Lab_4.c: 43:     UART_Init(9600);
 [e ( _UART_Init (1 -> -> 9600 `i `l ]
-"44
-[; ;Master_Lab_4.c: 44:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
 "45
-[; ;Master_Lab_4.c: 45:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;Master_Lab_4.c: 45:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "46
-[; ;Master_Lab_4.c: 46:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;Master_Lab_4.c: 46:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "47
-[; ;Master_Lab_4.c: 47:     PORTD = 0;
+[; ;Master_Lab_4.c: 47:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"48
+[; ;Master_Lab_4.c: 48:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"49
-[; ;Master_Lab_4.c: 49:     while (1){
+"50
+[; ;Master_Lab_4.c: 50:     while (1){
 [e :U 141 ]
 {
-"50
-[; ;Master_Lab_4.c: 50:         Cont_COM = UART_Read();
-[e = _Cont_COM ( _UART_Read ..  ]
 "51
-[; ;Master_Lab_4.c: 51:         PORTB = Cont_COM;
-[e = _PORTB _Cont_COM ]
+[; ;Master_Lab_4.c: 51:         Cont_COM = UART_Read();
+[e = _Cont_COM ( _UART_Read ..  ]
 "52
-[; ;Master_Lab_4.c: 52:     }
+[; ;Master_Lab_4.c: 52:         PORTB = Cont_COM;
+[e = _PORTB _Cont_COM ]
+"54
+[; ;Master_Lab_4.c: 54:         PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"55
+[; ;Master_Lab_4.c: 55:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"56
+[; ;Master_Lab_4.c: 56:         spiDataReady();
+[e ( _spiDataReady ..  ]
+"57
+[; ;Master_Lab_4.c: 57:         RecPOTS = spiRead();
+[e = _RecPOTS -> ( _spiRead ..  `uc ]
+"59
+[; ;Master_Lab_4.c: 59:         UART_Write(RecPOTS);
+[e ( _UART_Write (1 -> _RecPOTS `uc ]
+"60
+[; ;Master_Lab_4.c: 60:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"61
+[; ;Master_Lab_4.c: 61:         UART_Write(RecPOTS);
+[e ( _UART_Write (1 -> _RecPOTS `uc ]
+"62
+[; ;Master_Lab_4.c: 62:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"53
-[; ;Master_Lab_4.c: 53:     return;
+"63
+[; ;Master_Lab_4.c: 63:     return;
 [e $UE 139  ]
-"54
-[; ;Master_Lab_4.c: 54: }
+"64
+[; ;Master_Lab_4.c: 64: }
 [e :UE 139 ]
 }
-"59
-[; ;Master_Lab_4.c: 59: void init(void){
+"69
+[; ;Master_Lab_4.c: 69: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"60
-[; ;Master_Lab_4.c: 60:     TRISA = 0;
+"70
+[; ;Master_Lab_4.c: 70:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"61
-[; ;Master_Lab_4.c: 61:     TRISB = 0;
+"71
+[; ;Master_Lab_4.c: 71:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"62
-[; ;Master_Lab_4.c: 62:     TRISC = 0;
+"72
+[; ;Master_Lab_4.c: 72:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"63
-[; ;Master_Lab_4.c: 63:     TRISCbits.TRISC7 = 1;
+"73
+[; ;Master_Lab_4.c: 73:     TRISCbits.TRISC7 = 1;
 [e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"64
-[; ;Master_Lab_4.c: 64:     TRISD = 0;
+"74
+[; ;Master_Lab_4.c: 74:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"65
-[; ;Master_Lab_4.c: 65:     ANSEL = 0;
+"75
+[; ;Master_Lab_4.c: 75:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"66
-[; ;Master_Lab_4.c: 66:     ANSELH = 0b00000000;
+"76
+[; ;Master_Lab_4.c: 76:     ANSELH = 0b00000000;
 [e = _ANSELH -> -> 0 `i `uc ]
-"67
-[; ;Master_Lab_4.c: 67:     INTCON = 0b11100000;
+"77
+[; ;Master_Lab_4.c: 77:     INTCON = 0b11100000;
 [e = _INTCON -> -> 224 `i `uc ]
-"68
-[; ;Master_Lab_4.c: 68:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"78
+[; ;Master_Lab_4.c: 78:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1361 0 . `E1369 0 . `E1373 1 . `E1377 0 ]
-"69
-[; ;Master_Lab_4.c: 69: }
+"79
+[; ;Master_Lab_4.c: 79: }
 [e :UE 143 ]
 }

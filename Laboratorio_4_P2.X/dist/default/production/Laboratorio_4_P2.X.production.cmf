@@ -27,7 +27,7 @@ cstackBANK0 BANK0 1 20 20 6 1
 intentry CODE 0 4 4 A 2
 bssBANK0 BANK0 1 26 26 2 1
 bssCOMMON COMMON 1 77 77 1 1
-$C:\Users\hecto\AppData\Local\Temp\s3p4.o
+$C:\Users\hecto\AppData\Local\Temp\s60c.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 0 2007 2007 2 2
@@ -77,16 +77,16 @@ STRING 16B-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_4_P2.X.production.o
-11 cinit CODE >961:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-11 cinit CODE >964:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-11 cinit CODE >984:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-12 cinit CODE >987:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-13 cinit CODE >988:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-14 cinit CODE >989:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-15 cinit CODE >990:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-16 cinit CODE >996:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-16 cinit CODE >998:C:\Users\hecto\AppData\Local\Temp\s3p4.s
-17 cinit CODE >999:C:\Users\hecto\AppData\Local\Temp\s3p4.s
+11 cinit CODE >961:C:\Users\hecto\AppData\Local\Temp\s60c.s
+11 cinit CODE >964:C:\Users\hecto\AppData\Local\Temp\s60c.s
+11 cinit CODE >984:C:\Users\hecto\AppData\Local\Temp\s60c.s
+12 cinit CODE >987:C:\Users\hecto\AppData\Local\Temp\s60c.s
+13 cinit CODE >988:C:\Users\hecto\AppData\Local\Temp\s60c.s
+14 cinit CODE >989:C:\Users\hecto\AppData\Local\Temp\s60c.s
+15 cinit CODE >990:C:\Users\hecto\AppData\Local\Temp\s60c.s
+16 cinit CODE >996:C:\Users\hecto\AppData\Local\Temp\s60c.s
+16 cinit CODE >998:C:\Users\hecto\AppData\Local\Temp\s60c.s
+17 cinit CODE >999:C:\Users\hecto\AppData\Local\Temp\s60c.s
 4 intentry CODE >50:C:\Users\hecto\Documents\GitHub\Laboratorio_4/Laboratorio_4.X/Slave_Lab_4.c
 F6 text8 CODE >27:C:\Users\hecto\Documents\GitHub\Laboratorio_4/Laboratorio_4.X/ADC.c
 F7 text8 CODE >28:C:\Users\hecto\Documents\GitHub\Laboratorio_4/Laboratorio_4.X/ADC.c
@@ -244,22 +244,22 @@ __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 _CONT 77 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_4_P2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s3p4.o
+___sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s60c.o
 _init 26A 0 CODE 0 text5 dist/default/production\Laboratorio_4_P2.X.production.o
 _main 178 0 CODE 0 maintext dist/default/production\Laboratorio_4_P2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
-start 1C 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\s3p4.o
+start 1C 0 CODE 0 init C:\Users\hecto\AppData\Local\Temp\s60c.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 __size_of_init 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s3p4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\hecto\AppData\Local\Temp\s60c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _initTMR0 2B8 0 CODE 0 text2 dist/default/production\Laboratorio_4_P2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
@@ -275,8 +275,8 @@ __size_of_spiInit 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.product
 __Lmaintext 0 0 ABS 0 maintext -
 _INTCON B 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s3p4.o
-___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s3p4.o
+___stackhi 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s60c.o
+___stacklo 0 0 ABS 0 - C:\Users\hecto\AppData\Local\Temp\s60c.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 spiInit@sDataSample 20 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_4_P2.X.production.o
@@ -290,7 +290,7 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X.production.o
 __end_of_initADC 2B8 0 CODE 0 text4 dist/default/production\Laboratorio_4_P2.X.production.o
 __end_of_initOsc F0 0 CODE 0 text3 dist/default/production\Laboratorio_4_P2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s3p4.o
+___int_sp 0 0 STACK 2 stack C:\Users\hecto\AppData\Local\Temp\s60c.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -340,7 +340,7 @@ __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_4_P2.X
 __end_of_channel 22E 0 CODE 0 text8 dist/default/production\Laboratorio_4_P2.X.production.o
 __end_of_isr 178 0 CODE 0 text7 dist/default/production\Laboratorio_4_P2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\s3p4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\hecto\AppData\Local\Temp\s60c.o
 initOsc@frec 22 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_4_P2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __pmaintext 178 0 CODE 0 maintext dist/default/production\Laboratorio_4_P2.X.production.o
