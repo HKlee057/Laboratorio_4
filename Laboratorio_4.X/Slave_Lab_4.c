@@ -33,7 +33,7 @@
 //********************************************************************************************************
 // Funciones prototipo
 //********************************************************************************************************
-void initSlave(void);
+void init(void);
 void initTMR0(void);
 
 //********************************************************************************************************
@@ -78,9 +78,9 @@ void __interrupt() isr(void){
 //********************************************************************************************************
 //Void Principal
 //********************************************************************************************************
-void mainSlave(void) {
+void main(void) {
     initOsc(7); // Se usa un reloj interno de 8 MHz
-    initSlave(); //Se inicializan los puertos
+    init(); //Se inicializan los puertos
     initADC(); //Se inicializa el ADC
     initTMR0(); //Se configura el timer 0 para un desborde cada 3 ms
     
@@ -97,7 +97,7 @@ void mainSlave(void) {
 //Función de Inicialización de Puertos
 //********************************************************************************************************
 
-void initSlave(void){
+void init(void){
     TRISA = 0b00001001; // PORTA configurado como entrada
     TRISB = 0; // PORTB configurado como salida
     TRISC = 0; // PORTC configurado como salida
