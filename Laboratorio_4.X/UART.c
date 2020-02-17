@@ -34,7 +34,7 @@ uint8_t UART_Init(const long int baudrate){
 uint8_t UART_Read(){
     if(PIR1bits.RCIF==1){//si el bit5 del registro PIR1 se ha puesto a 1, indicando que se recibio un dato
         return RCREG;//devuelve el dato almacenado en el registro RCREG, que contiene los datos recibidos por UART
-    }  
+    }
 }
 //******************************************************************************
 //Función para mandar un caracter por UART

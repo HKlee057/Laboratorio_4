@@ -68,13 +68,3 @@ void init(void){
     INTCON = 0b11100000; //GIE, PIE Y T0IE Activadas
 }
 
-/*
-//********************************************************************************************************
-//Función de Inicialización de TMR0
-//********************************************************************************************************
-void initTMR0(void){
-    OPTION_REG	 = 0x84; //Prescaler de 1:32, Pull-ups en PORTB están desabilitadas
-    TMR0		 = 68; //Valor para obtener desborde cada 3 ms
-    
-}
-*/

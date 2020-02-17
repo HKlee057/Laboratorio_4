@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Laboratorio_4.X.production.sym \
   --cmf=dist/default/production\Laboratorio_4.X.production.cmf -z -Q16F887 \
-  -oC:\Users\hecto\AppData\Local\Temp\s1lg.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\hecto\AppData\Local\Temp\sfk4.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Laboratorio_4.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\hecto\AppData\Local\Temp\s1lg.o \
+  -DENTRY=2 -k C:\Users\hecto\AppData\Local\Temp\sfk4.o \
   dist/default/production\Laboratorio_4.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\hecto\AppData\Local\Temp\s1lg.o
+C:\Users\hecto\AppData\Local\Temp\sfk4.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2     400E       0
 dist/default/production\Laboratorio_4.X.production.o
@@ -161,9 +161,15 @@ _PORTD                    (abs)        0008
 _RCREG                    (abs)        001A
 _RCSTAbits                (abs)        0018
 _SPBRG                    (abs)        0099
+_SSPBUF                   (abs)        0013
+_SSPCON                   (abs)        0014
+_SSPSTAT                  (abs)        0094
+_SSPSTATbits              (abs)        0094
 _TRISA                    (abs)        0085
 _TRISB                    (abs)        0086
 _TRISC                    (abs)        0087
+_TRISC3                   (abs)        043B
+_TRISC5                   (abs)        043D
 _TRISCbits                (abs)        0087
 _TRISD                    (abs)        0088
 _TXREG                    (abs)        0019
