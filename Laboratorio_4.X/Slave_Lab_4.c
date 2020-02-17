@@ -79,6 +79,17 @@ void __interrupt() isr(void){
             CONT = 0; 
         }        
     }
+    //Interrupción del SSP
+       if(SSPIF == 1){
+           PORTD = spiRead();
+           if (PORTD == 1){
+               spiWrite(ADC_CH1_BIN);
+           }
+           if (PORTD == 2){
+               spiWrite(ADC_CH2_BIN);
+           }
+        SSPIF = 0;
+    }
 }
 //******************************************************************************
 //Void Principal
@@ -96,12 +107,6 @@ void main(void) {
     
     while (1){              //Loop infinito
         ADCON0bits.GO_nDONE = 1;                  //Inicia la conversión del ADC   
-        //**********************************************************************
-        // Manda el valor de los pots al PIC que funciona como MASTER
-        //**********************************************************************         
-        spiWrite(ADC_CH1_BIN);
-        __delay_ms(5);
-        spiWrite(ADC_CH2_BIN);
     }
     return;
 }
@@ -116,15 +121,16 @@ void init(void){
     TRISD = 0;                          // PORTD configurado como salida
     ANSEL = 0b00001001;                 // Pines connfigurados A0 y A3 como entradas analógicas
     ANSELH = 0;                         //Pines configurados como digitales 
-    INTCON = 0b11100000;                //Habilita GIE, PIE y T0IE 
+    INTCON = 0b11100000;                //Habilita GIE, PEIE y T0IE 
+    PIR1bits.SSPIF = 0;                 // Borramos bandera interrupción MSSP
+    PIE1bits.SSPIE = 1;                 // Habilitamos interrupción MSSP
+    TRISAbits.TRISA5 = 1;               // Slave Select
     //Inicialización de SPI
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
-
 //******************************************************************************
 //Función de Inicialización de TMR0
 //******************************************************************************
-
 void initTMR0(void){
     OPTION_REG	 = 0x84;                //Prescaler de 1:32, Pull-ups en PORTB están desabilitadas
     TMR0		 = 68;                  //Valor para obtener desborde cada 3 ms

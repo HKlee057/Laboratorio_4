@@ -2816,8 +2816,8 @@ void init(void);
 
 
 
-uint8_t Cont_COM;
-uint8_t RecPOTS;
+uint8_t RecPOT1;
+uint8_t RecPOT2;
 
 
 
@@ -2832,17 +2832,25 @@ void main(void) {
     PORTD = 0;
 
     while (1){
-        Cont_COM = UART_Read();
-        PORTB = Cont_COM;
+        PORTB = UART_Read();
 
-        PORTAbits.RA5 = 0;
+        PORTCbits.RC2 = 0;
         _delay((unsigned long)((1)*(8000000/4000.0)));
-        spiDataReady();
-        RecPOTS = spiRead();
+        spiWrite(1);
+        RecPOT1 = spiRead();
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTCbits.RC2 = 1;
 
-        UART_Write(RecPOTS);
+        PORTCbits.RC2 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        spiWrite(2);
+        RecPOT2 = spiRead();
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTCbits.RC2 = 1;
+
+        UART_Write(RecPOT1);
         _delay((unsigned long)((5)*(8000000/4000.0)));
-        UART_Write(RecPOTS);
+        UART_Write(RecPOT2);
     }
     return;
 }

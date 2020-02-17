@@ -42,8 +42,8 @@ void init(void);
 //******************************************************************************
 // Variables
 //******************************************************************************
-uint8_t Cont_COM;
-uint8_t RecPOTS;
+uint8_t RecPOT1;
+uint8_t RecPOT2;
 //******************************************************************************
 //Void Principal
 //******************************************************************************
@@ -58,17 +58,25 @@ void main(void) {
     PORTD = 0; 
     
     while (1){
-        Cont_COM = UART_Read();     //Valor transmitido por la computadora es leído y colocado en variable
-        PORTB = Cont_COM;           //Puerto B de MASTER PIC se iguala a la variable 
+        PORTB = UART_Read();     //Valor transmitido por la computadora es leído y colocado en puerto B
         
-        PORTAbits.RA5 = 0;          //Seleccionar al SLAVE
+        PORTCbits.RC2 = 0;          //Seleccionar al SLAVE
         __delay_ms (1);             //Delay de 1 milisegundo
-        spiDataReady();             //Esperar a que el dato esté listo para leer
-        RecPOTS = spiRead();        //Leer dato preveniente de SLAVE PIC
+        spiWrite(1);
+        RecPOT1 = spiRead();        //Leer dato preveniente de SLAVE PIC
+        __delay_ms(1);
+        PORTCbits.RC2 = 1;          //Slave Deselect 
         
-        UART_Write(RecPOTS);        //Escribir el el registro de UART para transmitir dato 1
+        PORTCbits.RC2 = 0;          //Seleccionar al SLAVE
+        __delay_ms (1);             //Delay de 1 milisegundo
+        spiWrite(2);
+        RecPOT2 = spiRead();        //Leer dato preveniente de SLAVE PIC
+        __delay_ms(1);
+        PORTCbits.RC2 = 1;          //Slave Deselect
+        
+        UART_Write(RecPOT1);        //Escribir el el registro de UART para transmitir dato 1
         __delay_ms(5);              //Delay de 5 milisegundos
-        UART_Write(RecPOTS);        //Escribir el el registro de UART para transmitir dato 1
+        UART_Write(RecPOT2);        //Escribir el el registro de UART para transmitir dato 1
     }
     return;
 }

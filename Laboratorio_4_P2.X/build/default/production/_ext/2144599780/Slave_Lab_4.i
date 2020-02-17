@@ -2858,6 +2858,17 @@ void __attribute__((picinterrupt(("")))) isr(void){
             CONT = 0;
         }
     }
+
+       if(SSPIF == 1){
+           PORTD = spiRead();
+           if (PORTD == 1){
+               spiWrite(ADC_CH1_BIN);
+           }
+           if (PORTD == 2){
+               spiWrite(ADC_CH2_BIN);
+           }
+        SSPIF = 0;
+    }
 }
 
 
@@ -2875,18 +2886,9 @@ void main(void) {
 
     while (1){
         ADCON0bits.GO_nDONE = 1;
-
-
-
-        spiWrite(ADC_CH1_BIN);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        spiWrite(ADC_CH2_BIN);
     }
-
-
     return;
 }
-
 
 
 
@@ -2899,11 +2901,12 @@ void init(void){
     ANSEL = 0b00001001;
     ANSELH = 0;
     INTCON = 0b11100000;
+    PIR1bits.SSPIF = 0;
+    PIE1bits.SSPIE = 1;
+    TRISAbits.TRISA5 = 1;
 
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
-
-
 
 
 
